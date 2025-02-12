@@ -1,0 +1,8 @@
+> kubectl apply -f 3-nginx-daemonset.yml 
+daemonset.apps/nginx created
+
+> kubectl get daemonsets --all-namespaces
+NAMESPACE     NAME         DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+default       nginx        1         1         1       1            1           <none>                   10s
+kube-system   kube-proxy   1         1         1       1            1           kubernetes.io/os=linux   3d3h
+

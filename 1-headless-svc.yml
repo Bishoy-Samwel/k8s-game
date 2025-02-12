@@ -8,8 +8,7 @@ spec:
   ports:
   - port: 80
     name: web
-  clusterIP: None
+  clusterIP: None # Indicate a Headless service
   selector:
     app: nginx
----
 

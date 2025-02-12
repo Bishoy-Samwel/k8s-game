@@ -1,0 +1,4 @@
+> kubectl get svc web-app-service
+
+NAME              TYPE       CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+web-app-service   NodePort   10.106.171.2   <none>        80:30082/TCP   17s

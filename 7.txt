@@ -1,0 +1,4 @@
+> kubectl get pods -l tier=backend
+NAME        READY   STATUS    RESTARTS   AGE
+nginx-pod   1/1     Running   0          66s
+

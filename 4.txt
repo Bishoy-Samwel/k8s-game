@@ -1,0 +1,10 @@
+- How many pods have been created within the nginx DaemonSet and why?
+- Only 1 pod is created because I have only 1 node (minikube).
+
+
+> get pods -l app=nginx -o wide
+NAME                READY   STATUS    RESTARTS   AGE     IP            NODE       NOMINATED NODE   READINESS GATES
+nginx-vv8c7         1/1     Running   0          2m13s   10.244.0.21   minikube   <none>           <none>
+web-statefulset-0   1/1     Running   0          19m     10.244.0.19   minikube   <none>           <none>
+web-statefulset-1   1/1     Running   0          19m     10.244.0.20   minikube   <none>           <none>
+

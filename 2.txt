@@ -1,0 +1,4 @@
+> get daemonsets --all-namespaces
+NAMESPACE     NAME         DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+kube-system   kube-proxy   1         1         1       1            1           kubernetes.io/os=linux   3d3h
+

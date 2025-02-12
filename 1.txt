@@ -1,0 +1,24 @@
+> kubectl apply -f apiVersion\:\ v0.yml 
+service/web-service created
+statefulset.apps/web-statefulset created
+
+> kubectl get svc web-service
+NAME          TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+web-service   ClusterIP   None         <none>        80/TCP    2m40s
+
+> kubectl get statefulset web-statefulset
+NAME              READY   AGE
+web-statefulset   0/2     3m20s
+
+> get pods -l app=nginx
+NAME                READY   STATUS    RESTARTS   AGE
+web-statefulset-0   1/1     Running   0          82s
+web-statefulset-1   1/1     Running   0          42s
+
+> kubectl exec -it web-statefulset-0 -- curl localhost
+
+> kubectl logs web-statefulset-0
+
+> kubectl logs web-statefulset-1
+
+> kubectl describe statefulset web-statefulset
