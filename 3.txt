@@ -1,0 +1,19 @@
+> kubectl get configmap webapp-config-map -o yaml
+
+apiVersion: v1
+data:
+  APP_COLOR: darkblue
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"APP_COLOR":"darkblue"},"kind":"ConfigMap","metadata":{"annotations":{},"name":"webapp-config-map","namespace":"default"}}
+  creationTimestamp: "2025-02-13T11:32:34Z"
+  name: webapp-config-map
+  namespace: default
+  resourceVersion: "49643"
+  uid: 957cce03-94a3-4e6c-a067-1a31dd8a51ad
+
+> kubectl exec webapp-color -- printenv | grep APP_COLOR
+
+APP_COLOR=darkblue

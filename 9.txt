@@ -1,0 +1,7 @@
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  70s   default-scheduler  Successfully assigned default/db-pod to minikube
+  Normal  Pulled     70s   kubelet            Container image "mysql:5.7" already present on machine
+  Normal  Created    70s   kubelet            Created container: mysql
+  Normal  Started    70s   kubelet            Started container mysql

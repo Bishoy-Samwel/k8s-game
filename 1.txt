@@ -1,0 +1,16 @@
+> kubectl get configmaps --all-namespaces
+NAMESPACE         NAME                                                   DATA   AGE
+default           kube-root-ca.crt                                       1      3d21h
+kube-node-lease   kube-root-ca.crt                                       1      3d21h
+kube-public       cluster-info                                           1      3d21h
+kube-public       kube-root-ca.crt                                       1      3d21h
+kube-system       coredns                                                1      3d21h
+kube-system       extension-apiserver-authentication                     6      3d21h
+kube-system       kube-apiserver-legacy-service-account-token-tracking   1      3d21h
+kube-system       kube-proxy                                             2      3d21h
+kube-system       kube-root-ca.crt                                       1      3d21h
+kube-system       kubeadm-config                                         1      3d21h
+kube-system       kubelet-config                                         1      3d21h
+
+> kubectl get configmaps --all-namespaces | wc -l
+12

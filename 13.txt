@@ -1,0 +1,2 @@
+> kubectl logs print-envars-greeting
+Welcome to DevOps Industries
