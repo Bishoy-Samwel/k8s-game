@@ -1,0 +1,8 @@
+5.​ Create a Persistent Volume Claim with the given specification.
+➔​ Volume Name: claim-log-1
+➔​ Storage Request: 50Mi
+➔​ Access Modes: ReadWriteMany
+
+> get pvc claim-log-1
+NAME          STATUS   VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+claim-log-1   Bound    pv-log   100Mi      RWX                           <unset>                 2m45s

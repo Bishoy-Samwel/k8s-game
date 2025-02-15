@@ -1,0 +1,10 @@
+4.​ Create a Persistent Volume with the given specification.
+➔​ Volume Name: pv-log
+➔​ Storage: 100Mi
+➔​ Access Modes: ReadWriteMany
+➔​ Host Path: /pv/log
+
+> kubectl get pv 
+NAME     CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                 STORAGECLASS   VOLUMEATTRIBUTESCLASS   REASON   AGE
+pv-log   100Mi      RWX            Recycle          Bound    default/claim-log-1                  <unset>                          11m
+

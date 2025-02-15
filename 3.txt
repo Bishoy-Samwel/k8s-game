@@ -1,0 +1,14 @@
+What is the user configured in the current context?
+
+
+- context:
+    cluster: minikube
+    extensions:
+    - extension:
+        last-update: Thu, 13 Feb 2025 15:54:27 EET
+        provider: minikube.sigs.k8s.io
+        version: v1.35.0
+      name: context_info
+    namespace: default
+    user: minikube
+

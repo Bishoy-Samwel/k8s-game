@@ -1,0 +1,37 @@
+Create a ConfigMap named nginx-config with the following Nginx configuration:
+nginx.conf:
+  Create a Pod named nginx-pod that:
+    ○​ Uses the Nginx image, & mounts the ConfigMap as a volume.
+    ○​ Ensures that the nginx.conf file from the ConfigMap is available at
+    /etc/nginx/nginx.conf.
+  Verify the Pod by:
+    ○​ Checking the pod logs.
+    ○​ Executing a command inside the pod to test the custom configuration.W
+
+
+kubectl exec -it nginx-pod -- cat /etc/nginx/nginx.conf
+events {
+}
+http {
+  server {
+    listen 80;
+    server_name localhost;
+    location / {
+      return 200 'Hello from custom Nginx config!';
+    }
+  }
+}
+
+exec -it nginx-pod -- cat /etc/nginx/nginx.conf
+events {
+}
+http {
+  server {
+    listen 80;
+    server_name localhost;
+    location / {
+      return 200 'Hello from custom Nginx config!';
+    }
+  }
+}
+

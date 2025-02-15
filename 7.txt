@@ -1,0 +1,51 @@
+7.​ Create a pod named volume-share-datacenter.
+For first container, use image centos:latest, container should be named as
+volume-container-datacenter-1, and run a command '/bin/bash', '-c' and 'sleep 10000'.
+Volume volume-share should be mounted at path /tmp/news.
+
+> kubectl describe  pod volume-share-datacenter 
+Volumes:
+  volume-share:
+    Type:       EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:     
+    SizeLimit:  500Mi
+  kube-api-access-cqkzr:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+
+
+For second container, use image centos:latest, container should be named as
+volume-container-datacenter-2, and run a command '/bin/bash', '-c' and 'sleep 10000'.
+Volume volume-share should be mounted at path /tmp/cluster.
+Volumes to be named as volume-share and use emptyDir: { }.
+
+> kubectl describe  pod volume-share-datacenter-2
+Volumes:
+  volume-share:
+    Type:       EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:     
+    SizeLimit:  500Mi
+  kube-api-access-2wkwc:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+
+After creating the pod, exec into the first container volume-container-datacenter-1, and
+create a file news.txt with content Welcome from datacenter-1! under the mount path of
+first container /tmp/news.
+
+The file news.txt should be present under the mounted path /tmp/cluster of
+second container volume-container-datacenter-2 as they are using shared
+Volumes.
+
+> kubectl exec -it volume-share-datacenter-2 -- /bin/bash

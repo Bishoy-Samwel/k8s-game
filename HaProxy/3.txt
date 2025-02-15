@@ -1,0 +1,31 @@
+> kubectl get clusterrole haproxy-cluster-role-devops -o yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRole","metadata":{"annotations":{},"name":"haproxy-cluster-role-devops"},"rules":[{"apiGroups":[""],"resources":["configmaps","secrets","endpoints","nodes","pods","services","namespaces","events","serviceaccounts"],"verbs":["get","list","watch","create","patch","update"]}]}
+  creationTimestamp: "2025-02-15T16:43:14Z"
+  name: haproxy-cluster-role-devops
+  resourceVersion: "95681"
+  uid: 5fca1929-352b-4d92-939b-9bb8081103ac
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  - secrets
+  - endpoints
+  - nodes
+  - pods
+  - services
+  - namespaces
+  - events
+  - serviceaccounts
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - patch
+  - update

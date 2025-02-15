@@ -1,0 +1,3 @@
+> kubectl get serviceaccount haproxy-service-account-devops -n haproxy-controller-devops
+NAME                             SECRETS   AGE
+haproxy-service-account-devops   0         22s

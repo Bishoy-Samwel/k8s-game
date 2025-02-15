@@ -1,0 +1,21 @@
+9.​ Create a new service account with the name pvviewer. 
+
+Grant this Service account access to list all PersistentVolumes in the cluster 
+
+by creating an appropriate cluster role called pvviewer-role and 
+
+ClusterRoleBinding called pvviewer-role-binding.
+
+
+
+> kubectl get serviceaccount pvviewer -n lab
+NAME       SECRETS   AGE
+pvviewer   0         97s
+
+> kubectl get clusterrole pvviewer-role
+NAME            CREATED AT
+pvviewer-role   2025-02-15T16:03:18Z
+
+> kubectl get clusterrolebinding pvviewer-role-binding
+NAME                    ROLE                        AGE
+pvviewer-role-binding   ClusterRole/pvviewer-role   30s

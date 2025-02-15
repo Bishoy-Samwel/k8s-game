@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: volume-share-datacenter-2
+spec:
+  containers:
+    - image: centos:latest
+      name: volume-container-datacenter-1
+      command: ["/bin/bash", "-c", "sleep 10000"]
+      volumeMounts: 
+        - mountPath: "/tmp/news"
+          name: volume-share
+  volumes:
+    - name: volume-share
+      emptyDir:
+        sizeLimit: 500Mi

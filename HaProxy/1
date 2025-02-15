@@ -1,0 +1,12 @@
+> kubectl create namespace haproxy-controller-devops
+namespace/haproxy-controller-devops created
+
+
+> kubectl get ns
+NAME                        STATUS   AGE
+default                     Active   6d3h
+haproxy-controller-devops   Active   12s
+kube-node-lease             Active   6d3h
+kube-public                 Active   6d3h
+kube-system                 Active   6d3h
+lab                         Active   107m
