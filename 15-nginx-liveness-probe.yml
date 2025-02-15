@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-liveness-pod
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+      ports:
+        - containerPort: 80
+      livenessProbe:
+        httpGet:
+          path: /test.html
+          port: 80
+        # initialDelaySeconds: 3  # Wait 3s before first check
+        # periodSeconds: 5         # Check every 5s
+        # failureThreshold: 3      # Restart if failed 3 times

@@ -1,0 +1,1 @@
+  Warning  BackOff    101s (x2 over 103s)  kubelet            Back-off restarting failed container nginx-container in pod nginx-liveness-pod_default(0abec0df-cbb2-477e-a5d8-8fb9e77403f3)
